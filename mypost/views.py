@@ -26,19 +26,22 @@ class PostCreateView(CreateView):
     # model = Post
     form_class = PostForm
     context_object_name = 'post_create'
-    template_name = 'mypost/post_create.html'
+    template_name = 'mypost/create.html'
     success_url = reverse_lazy('mypost:index')
 
 class PostDeleteView(DeleteView):
     model = Post
     context_object_name = 'post_delete'
+    template_name='mypost/delete.html'
     success_url = reverse_lazy('mypost:index')
-    def get(self, request, *args, **kwargs):
-        return self.post(request, *args, **kwargs)
+    
 
 class PostUpdateView(UpdateView):
-    # model = Post
+    model = Post
     form_class = PostForm
     context_object_name = 'post_update'
-    template_name = 'mypost/post_update.html'
+    template_name = 'mypost/update.html'
     success_url = reverse_lazy('mypost:index')
+    def get_queryset(self):
+        return super().get_queryset().filter()
+    

@@ -1,0 +1,14 @@
+{% extends 'base_post.html' %}
+{%block content%}
+<h2>Latest Posts</h2>
+<ul>
+{%for post in latest_post_list%}
+    <li>
+        <h3><a href="/mypost/{{post.id}}/">{{post.title}}</a></h3>
+        <p><b>{{post.author}}</b></p>
+    </li>
+{%endfor%}
+</ul>
+<a href="{%url 'mypost:post_create'%}"><button>글 등록</button></a>
+<a href="{%url 'mypost:all' %}"><button>전체 보기</button></a>
+{% endblock content %}

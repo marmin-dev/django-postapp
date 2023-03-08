@@ -1,0 +1,11 @@
+{% extends 'base_post.html' %}
+
+{% block content %}
+  <h1>Edit</h1>
+  <form method="post" url="/mypost/{{object.id}}/update/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+    <a href="/"><button>Quit</button></a>
+  </form>
+{% endblock %}

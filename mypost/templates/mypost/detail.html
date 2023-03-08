@@ -1,0 +1,9 @@
+{% extends 'base_post.html' %}
+{%block content%}
+    <h1>{{object.title}}</h1>
+    <p>{{object.author}}</p>
+    <p style="color:gray">{{object.pub_date}}</p>
+    {{object.content}}
+    <a href="/mypost/{{object.id}}/update/"><button>수정하기</button></a>
+    <a href="/mypost/{{object.id}}/delete/"><button>삭제하기</button></a>
+{% endblock %}

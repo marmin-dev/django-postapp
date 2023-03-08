@@ -1,0 +1,12 @@
+{%extends 'base_post.html'%}
+{%block content%}
+    <h2>게시글 목록 보기</h2>
+    <ul>
+        {% for post in all_post_list%}
+            <li>
+                <h3><a href="/mypost/{{post.pk}}">{{post.title}}</a></h3>
+                <p>{{post.author}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{%endblock%}

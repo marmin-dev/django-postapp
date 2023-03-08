@@ -1,0 +1,10 @@
+{% extends 'base_post.html'%}
+{% block content %}
+    <h2>게시글 작성</h2>
+    <form action="{% url 'mypost:post_create'%}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Save</button>
+        <a href="/"><button>Quit</button></a>
+    </form>
+{% endblock %}

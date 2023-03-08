@@ -1,0 +1,11 @@
+{% extends 'base_post.html' %}
+
+{% block content %}
+  <h1>{{ object.title }}"</h1>
+  <p>진짜로 지울래?</p>
+  <form method="post" url="/mypost/{{object.pk}}/delete/">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="/mypost/">Cancel</a>
+  </form>
+{% endblock %}
